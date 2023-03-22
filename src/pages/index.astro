@@ -1,56 +1,102 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Arrow from "../components/Arrow.astro";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="V3 - Type Safe Nuxt Stack">
 	<main>
-		<h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[#42d392] to-[#647eff] text-8xl font-black">V3</h1>
-		<p class="text-transparent bg-clip-text bg-gradient-to-r from-[#42d392] to-[#647eff] text-xl">End-to-end type-safe Nuxt Stack</p>
-		<p class="mt-2 text-gray-300">
-			<a href="https://github.com/crbroughton/v3" class="underline underline-offset-4">Click here</a>
-			to get started...
-		</p>
-
-		<!-- <h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul> -->
+		<section>
+			<div>
+				<h1
+					class="text-transparent bg-clip-text bg-gradient-to-r from-[#42d392] to-[#647eff] text-8xl font-black"
+				>
+					V3
+				</h1>
+				<p
+					class="text-transparent bg-clip-text bg-gradient-to-r from-[#42d392] to-[#647eff] text-xl"
+				>
+					End-to-end type-safe Nuxt Stack
+				</p>
+				<p class="mt-2 text-gray-300">
+					<a
+						href="https://github.com/crbroughton/v3"
+						class="underline underline-offset-4">Click here</a
+					>
+					to get started...
+				</p>
+			</div>
+			<div class="flex flex-col absolute bottom-0 w-full mb-6">
+				<Arrow />
+			</div>
+		</section>
+		<section class="card-section">
+			<div>
+				<h1 class="text-transparent bg-clip-text bg-gradient-to-r from-[#42d392] to-[#647eff] text-5xl font-black mb-8">Features</h1>
+			</div>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href="https://nuxt.com"
+					title="Nuxt"
+					body="Intuitive base to build any Vue project"
+				/>
+				<Card
+					href="https://www.prisma.io"
+					title="Prisma"
+					body="Typesafe ORM for database interactions"
+				/>
+				<Card
+					href="https://trpc.io"
+					title="tRPC"
+					body="Craft end-to-end type-safe APIs"
+				/>
+				<Card
+					href="https://github.com/gvergnaud/ts-pattern"
+					title="TS-Pattern"
+					body="Exhaustive pattern matching"
+				/>
+				<Card
+					href="https://zod.dev"
+					title="Zod"
+					body="TypeScript-first schema validation"
+				/>
+				<Card
+					href="https://auth0.com"
+					title="Auth0"
+					body="Adaptable authentication and authorization "
+				/>
+				<Card
+					href="https://tailwindcss.com"
+					title="Tailwind"
+					body="Rapid development with utility-first CSS"
+				/>
+			</ul>
+		</section>
 	</main>
 </Layout>
 
 <style>
 	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
+		position: relative;
+		width: 100%;
+		height: 100vh;
+		color: white;
+		scroll-behavior: smooth;
+		scroll-snap-type: y mandatory;
+		overflow: auto;
+	}
+	section {
+		width: 100%;
+		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		color: white;
+		background-size: cover;
+		scroll-snap-align: start;
+	}
+
+	section > div {
+		margin: 0 auto;
 	}
 	h1 {
 		font-size: 3rem;
@@ -85,8 +131,16 @@ import Card from '../components/Card.astro';
 	}
 	.link-card-grid {
 		display: grid;
+		max-width: 800px;
 		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  		align-items: center;
 		gap: 1rem;
 		padding: 0;
+		/* margin: 0 auto; */
+	}
+	.card-section {
+		max-width: 800px;
+		padding: 20px;
+		margin: 0 auto;
 	}
 </style>
