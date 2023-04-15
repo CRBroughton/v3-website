@@ -13,7 +13,7 @@ If you have a Github account, visit the following link to create a V3 repository
 
 https://github.com/CRBroughton/V3/generate
 
-Then you can clone down your V3 repository
+Then you can clone down your V3 repository.
 
 ### Alternative method
 
@@ -25,7 +25,7 @@ Alternatively, clone the repository down from github:
   ```
 ::
 
-Then CD into the folder you've just created and install the dependencies
+Then CD into the folder you've just created and install the dependencies:
 
 ::code-group
   ```bash [pnpm]
