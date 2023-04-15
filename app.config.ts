@@ -2,7 +2,7 @@ export default defineAppConfig({
   docus: {
     title: 'V3',
     description: 'End-to-end type-safe Nuxt Stack',
-    image: './assets/logo.png',
+    image: '/logo.png',
     socials: {
       github: 'crbroughton/V3'
     },
