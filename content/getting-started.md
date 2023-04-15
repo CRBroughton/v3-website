@@ -5,6 +5,10 @@ description: "Let's learn how to use my amazing module."
 
 # Getting started with V3
 
+Please note, that the V3 documentation is currently a work in progress;
+If you're in doubt, check the relevant documentation for the specific technology
+for your needs.
+
 ## Prerequisties
 
 ### Github account
