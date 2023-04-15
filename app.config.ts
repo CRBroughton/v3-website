@@ -2,7 +2,8 @@ export default defineAppConfig({
   docus: {
     title: 'V3',
     description: 'End-to-end type-safe Nuxt Stack',
-    image: '/logo.png',
+    image: '/social-card-preview.png',
+    url: 'https://v3.crbroughton.me',
     socials: {
       github: 'crbroughton/V3'
     },
