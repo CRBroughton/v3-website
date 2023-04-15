@@ -62,6 +62,35 @@ no longer type-checked; Note that doing so may cause certain functionality to br
 (authentication, database connections) and may require additional modifications
 elsewhere in the template to fully remove a feature.
 
+A successful configuration should look something like:
+
+```
+# __     _______   ____ _____  _    ____ _  __
+# \ \   / /___ /  / ___|_   _|/ \  / ___| |/ /
+#  \ \ / /  |_ \  \___ \ | | / _ \| |   | ' / 
+#   \ V /  ___) |  ___) || |/ ___ \ |___| . \ 
+#    \_/  |____/  |____/ |_/_/   \_\____|_|\_\
+#
+
+# TRPC SERVER URL
+VITE_TRPC_URL="http://localhost:5000/trpc"
+# POSTGRES VARIABLES
+DATABASE_URL="postgresql://MyUser:MyPassword@localhost:5432/MyDatabaseName?schema=public"
+DATABASE_NAME=MyDatabaseName
+DATABASE_USER=MyUser
+DATABASE_PASSWORD="G8L4j9FbhpC4rXk6McaK6aNLTQNi67G"
+# AUTH0 AUTHENTICATION VARIABLES
+# NUXT_SECRET - run: 'openssl rand -base64 64' to create a new key
+NUXT_SECRET="ViT6Yrackd6ooQfdQXJx92L592ZsLTd"
+AUTH_ORIGIN="http://localhost:3000"
+NUXT_AUTH0_CLIENT_ID="PNaJzSBFr8GWoVz9j5PCLnZUcK3LoAF"
+NUXT_AUTH0_CLIENT_SECRET="XXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
+NUXT_AUTH0_ISSUER="https://dev-XXXXXXXXXXXXXXXX.uk.auth0.com"
+```
+
+If you have succesfully configured V3, you'll succesfully pass the `.env` type-checker
+and see the welcome screen.
+
 ### Nuxt configuration
 
 A Nuxt secret key can be provided to the `.env` file using the recommended `openssl`
@@ -90,7 +119,7 @@ datasource db {
 ```
 
 V3 will now use the provide PostgreSQL database, which you can configure inside
-the `.env` file to your liking, and start with `docker compose up -d`.
+the `.env` file to your liking, and started with `docker compose up -d`.
 
 ### Authentication configuration
 
