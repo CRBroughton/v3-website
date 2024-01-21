@@ -45,6 +45,27 @@ You'll then want to remove the .git folder to start your own project.
   ```
 ::
 
+### Auth0 Account
+
+It is recommended that you create a <a href="https://auth0.com/">
+Auth0 account</a>, as V3 by default uses <a href="https://auth0.com/">Auth0</a> for all authentication purposes.
+
+With an account created, follow the <a href="https://auth0.com/">Auth0 Tenant guide</a>; You'll need to create a new Tenant,
+as well as an application with <a href="https://auth0.com/">Auth0</a>. With an application created, you'll now have access to the
+variables requied to set up V3.
+
+By default, I'd recommend using the 'Regular Web Application'
+application option when setting up a new application in <a href="https://auth0.com/">Auth0</a>.
+
+When configuring your <a href="https://auth0.com/">Auth0</a> application settings, you'll need to
+set the callback URL's like so:
+
+- Allow Callback URLs = http://localhost:3000/api/auth/callback/auth0
+- Allow Logout URLs = http://localhost:3000
+
+It should be noted that for production / deployment, these URL's
+will differ, dependant on your deployment processes.
+
 ## Setting up your V3 application
 
 ### Environment file
@@ -91,6 +112,10 @@ NUXT_AUTH0_CLIENT_ID="PNaJzSBFr8GWoVz9j5PCLnZUcK3LoAF"
 NUXT_AUTH0_CLIENT_SECRET="XXXXXXXXXXXXXXXXXXXXXXX-XXXXXXXXXXXXXX-XXXXXXXXXXXXXXXXXXXXXXXXX"
 NUXT_AUTH0_ISSUER="https://dev-XXXXXXXXXXXXXXXX.uk.auth0.com"
 ```
+
+For the various ` NUXT_AUTH0` variables, these can all be found
+on your <a href="https://auth0.com/">Auth0</a> applications settings
+page.
 
 If you have succesfully configured V3, you'll succesfully pass the `.env` type-checker
 and see the welcome screen.
